@@ -18,7 +18,7 @@ The installation of the PagerDuty plugin for Backstage is done with *yarn* as al
 To install this plugin run the following command from the Backstage root folder.
 
 ```bash
-yarn add --cwd packages/app @pagerduty/backstage-plugin-commmon
+yarn add --cwd packages/app @pagerduty/backstage-plugin-common
 yarn add --cwd packages/backend @pagerduty/backstage-plugin-common
 ```
 
