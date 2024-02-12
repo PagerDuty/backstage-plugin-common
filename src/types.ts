@@ -168,3 +168,11 @@ export class HttpError extends Error {
 
     status: number;
 }
+
+/** @public */
+export type PagerDutyOAuthConfig = {
+    clientId: string;
+    clientSecret: string;
+    region?: string;
+    subDomain: string;
+}
