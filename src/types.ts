@@ -11,7 +11,7 @@ export type PagerDutyIncident = {
     ];
     service: PagerDutyService;
     created_at: string;
-    urgency: string;
+    urgency?: string;
 }
 
 /** @public */
