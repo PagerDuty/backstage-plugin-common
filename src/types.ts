@@ -11,6 +11,7 @@ export type PagerDutyIncident = {
     ];
     service: PagerDutyService;
     created_at: string;
+    urgency?: string;
 }
 
 /** @public */
@@ -113,6 +114,73 @@ export type PagerDutyVendor = {
     summary?: string;
     self?: string;
     html_url?: string;
+}
+
+/** @public */
+export type PagerDutyServiceStandards = {
+    resource_id: string;
+    resource_type: string;
+    score: {
+        passing: number;
+        total: number;
+    };
+    standards: PagerDutyServiceStandard[];
+}
+
+/** @public */
+export type PagerDutyServiceStandard = {
+    active: boolean;
+    description: string;
+    id: string;
+    name: string;
+    pass: boolean;
+    type: string;
+}
+
+/** @public */
+export type PagerDutyServiceStandardsResponse = {
+    standards: PagerDutyServiceStandards;
+}
+
+/** @public */
+export type PagerDutyServiceMetrics = {
+    mean_assignment_count?: number;
+    mean_engaged_seconds?: number;
+    mean_engaged_user_count?: number;
+    mean_seconds_to_engage?: number;
+    mean_seconds_to_first_ack?: number;
+    mean_seconds_to_mobilize?: number;
+    mean_seconds_to_resolve?: number;
+    mean_user_defined_engaged_seconds?: number;
+    service_id: string;
+    service_name?: string;
+    team_id?: string;
+    team_name?: string;
+    total_business_hour_interruptions?: number;
+    total_down_time_minutes?: number;
+    total_engaged_seconds?: number;
+    total_escalation_count?: number;
+    total_high_urgency_incidents?: number;
+    total_incident_count?: number;
+    total_incidents_acknowledged?: number;
+    total_incidents_auto_resolved?: number;
+    total_incidents_manual_escalated?: number;
+    total_incidents_reassigned?: number;
+    total_incidents_timeout_escalated?: number;
+    total_interruptions?: number;
+    total_low_urgency_incidents?: number;
+    total_major_incidents?: number;
+    total_notifications?: number;
+    total_off_hour_interruptions?: number;
+    total_sleep_hour_interruptions?: number;
+    total_snoozed_seconds?: number;
+    total_user_defined_engaged_seconds?: number;
+    up_time_pct?: number;
+}
+
+/** @public */
+export type PagerDutyServiceMetricsResponse = {
+    metrics: PagerDutyServiceMetrics[]
 }
 
 /** @public */
