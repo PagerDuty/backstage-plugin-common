@@ -189,6 +189,14 @@ export type PagerDutyServicesResponse = {
 };
 
 /** @public */
+export type PagerDutyServicesAPIResponse = PagerDutyServicesResponse & {
+    offset: number;
+    limit: number;
+    total: number | null;
+    more: boolean;
+};
+
+/** @public */
 export type PagerDutyServiceResponse = {
     service: PagerDutyService;
 };
