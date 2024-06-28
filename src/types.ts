@@ -94,6 +94,7 @@ export type PagerDutyTeam = {
     summary?: string;
     self?: string;
     html_url?: string;
+    name: string;
 }
 
 /** @public  */
@@ -252,3 +253,27 @@ export type PagerDutyOAuthConfig = {
     region?: string;
     subDomain: string;
 }
+
+/** @public */
+export type PagerDutyEntityMapping = {
+    entityRef: string;
+    entityName?: string;
+    serviceId: string;
+    serviceName?: string;
+    integrationKey?: string;
+    serviceUrl?: string;
+    status?: "NotMapped" | "InSync" | "OutOfSync";
+    processedDate?: Date;
+    team?: string;
+    escalationPolicy?: string;
+};
+
+/** @public */
+export type PagerDutyEntityMappingsResponse = {
+    mappings: PagerDutyEntityMapping[];
+};
+
+/** @public */
+export type PagerDutyEntityMappingResponse = {
+    mapping: PagerDutyEntityMapping;
+};
