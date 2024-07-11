@@ -55,6 +55,7 @@ export type PagerDutyService = {
     summary?: string;
     self?: string;
     html_url: string;
+    account?: string;
 }
 
 /** @public */
@@ -65,6 +66,7 @@ export type PagerDutyEscalationPolicy = {
     summary?: string;
     self?: string;
     html_url?: string;
+    account?: string;
 }
 
 /** @public */
@@ -255,6 +257,16 @@ export type PagerDutyOAuthConfig = {
 }
 
 /** @public */
+export type PagerDutyAccountConfig = {
+    id: string;
+    isDefault?: boolean;
+    eventsBaseUrl?: string;
+    apiBaseUrl?: string;
+    apiToken?: string;
+    oauth?: PagerDutyOAuthConfig;
+}
+
+/** @public */
 export type PagerDutyEntityMapping = {
     entityRef: string;
     entityName?: string;
@@ -266,6 +278,7 @@ export type PagerDutyEntityMapping = {
     processedDate?: Date;
     team?: string;
     escalationPolicy?: string;
+    account?: string;
 };
 
 /** @public */
