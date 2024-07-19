@@ -290,3 +290,22 @@ export type PagerDutyEntityMappingsResponse = {
 export type PagerDutyEntityMappingResponse = {
     mapping: PagerDutyEntityMapping;
 };
+
+/** @public */
+export type PagerDutyServiceDependencyReference = {
+    id: string;
+    type: string;
+}
+
+/** @public */
+export type PagerDutyServiceDependency = {
+    id: string,
+    type: string,
+    supporting_service: PagerDutyServiceDependencyReference,
+    dependent_service: PagerDutyServiceDependencyReference,
+}
+
+/** @public */
+export type PagerDutyServiceDependencyResponse = {
+    relationships: PagerDutyServiceDependency[];
+}
