@@ -299,8 +299,8 @@ export type PagerDutyServiceDependencyReference = {
 
 /** @public */
 export type PagerDutyServiceDependency = {
-    id: string,
-    type: string,
+    id?: string,
+    type?: string,
     supporting_service: PagerDutyServiceDependencyReference,
     dependent_service: PagerDutyServiceDependencyReference,
 }
@@ -308,4 +308,15 @@ export type PagerDutyServiceDependency = {
 /** @public */
 export type PagerDutyServiceDependencyResponse = {
     relationships: PagerDutyServiceDependency[];
+}
+
+/** @public */
+export type PagerDutySetting = {
+    id: string;
+    value: "backstage" | "pagerduty" | "both" | "disabled";
+}
+
+/** @public */
+export type PagerDutySettings = {
+    settings: PagerDutySetting[];
 }
