@@ -11,12 +11,19 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "common-library"
+    "role": "common-library",
+    "pluginId": "pagerduty",
+    "pluginPackages": [
+      "@pagerduty/backstage-plugin",
+      "@pagerduty/backstage-plugin-common",
+      "@pagerduty/backstage-plugin-backend"
+    ]
   },
   "homepage": "https://github.com/pagerduty/backstage-plugin-common",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pagerduty/backstage-plugin-common.git"
+    "url": "https://github.com/pagerduty/backstage-plugin-common.git",
+    "directory": "."
   },
   "keywords": [
     "backstage",
