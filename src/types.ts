@@ -250,19 +250,29 @@ export class HttpError extends Error {
 
 /** @public */
 export type PagerDutyOAuthConfig = {
+    /** @visibility backend */
     clientId: string;
+    /** @visibility secret */
     clientSecret: string;
+    /** @visibility frontend */
     region?: string;
+    /** @visibility frontend */
     subDomain: string;
 }
 
 /** @public */
 export type PagerDutyAccountConfig = {
+    /** @visibility frontend */
     id: string;
+    /** @visibility frontend */
     isDefault?: boolean;
+    /** @visibility frontend */
     eventsBaseUrl?: string;
+    /** @visibility frontend */
     apiBaseUrl?: string;
+    /** @visibility secret */
     apiToken?: string;
+    /** @visibility frontend */
     oauth?: PagerDutyOAuthConfig;
 }
 
